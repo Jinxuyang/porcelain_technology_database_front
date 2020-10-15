@@ -1,0 +1,14 @@
+.container.introduction {
+    position: relative;
+    margin-top: 50px;
+}
+
+.details {
+    position: absolute;
+    bottom: 20px;
+}
+
+.lead>.item {
+    font-size: 14px;
+    color: rgb(83, 83, 83);
+}

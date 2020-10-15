@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>文物科技数据库</title>
-    <link rel="stylesheet" href="./sr/css/index.css" />
-
     <!-- Bootstrap core CSS -->
     <link
       rel="stylesheet"
@@ -29,13 +27,14 @@
       href="https://cdn.bootcdn.net/ajax/libs/startbootstrap-landing-page/1.0.0/css/landing-page.min.css"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="./sr/css/index.css" />
   </head>
   <body>
     <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top" id="top-navigation">
       <div class="container">
         <a class="navbar-brand" href="#">文物科技数据库</a>
-        <a class="btn btn-primary" href="#">登录</a>
       </div>
     </nav>
 
@@ -45,25 +44,22 @@
           <h1 class="mb-5">文物科技数据库</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
                 <input
-                  type="email"
                   class="form-control form-control-lg"
                   placeholder="检索......"
                 />
               </div>
               <div class="col-12 col-md-3">
                 <button
-                  type="submit"
+                  id="search-btn"
                   class="btn btn-block btn-lg btn-primary"
                 >
                   检 索
                 </button>
               </div>
             </div>
-          </form>
         </div>
       </div>
     </div>
@@ -76,7 +72,32 @@
     </header>
 
     <!-- Bootstrap core JavaScript -->
-    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- <script type="text/javascript">
+      $(document).ready(function(){
+        $("#search-btn").click(function(){
+          // $.get("http://10.111.23.232:8099/fehead/relics/getRelicsById?id=1",function(data,status){
+          //   console.log("data:" + data + "\nstatus: " + status);
+          // })
+          $.ajax({
+            url:"http://10.111.23.232:8099/fehead/relics/getRelicsById?id=1",
+            method:"get",
+            xhrFields:{withCredentials:true},
+            headers:{
+              "Content-type":"application/json"
+            },
+            success:function(res){
+              console.log(res);
+
+            },
+            fail:function(){
+
+            }
+          });
+        });
+      }) -->
+
+    </script>
   </body>
 </html>
