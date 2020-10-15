@@ -30,25 +30,25 @@
             <div class="col-sm-6">
                 <div class="form-group">
                     <label >样品原编号</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" class="form-control" id="relicsOrgId" name="relicsOrgId">
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
                     <label >样品编号</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" class="form-control" id="relicsId" name="relicsId">
                 </div>
             </div>
             <div class="col-sm-12">
                 <div class="form-group">
                     <label >文物名称</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" class="form-control" id="relicsName" name="relicsName">
                 </div>
             </div>
             <div class="col-sm-12">
                 <div class="form-group">
                     <label >文物分类</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" class="form-control" id="relicsType" name="relicsType">
                 </div>
             </div>
 
@@ -56,45 +56,45 @@
 
         <div class="form-group">
             <label >出土地点</label>
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control" id="relicsBirthPlace" name="relicsBirthPlace">
         </div>
         <div class="form-group">
             <label >出土时间</label>
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control" id="relicsBirthTime" name="relicsBirthTime">
         </div>
         <div class="form-group">
             <label >烧造时代</label>
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control" id="relicsBurnTime" name="relicsBurnTime">
         </div>
         <div class="form-group">
             <label >窑口</label>
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control" id="relicsKiln" name="relicsKiln">
         </div>
         <div class="form-group">
             <label >样本提供者</label>
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control" id="relicsProvider" name="relicsProvider">
         </div>
         <div class="form-group">
             <label >存放单位</label>
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control" id="relicsStorePlace" name="relicsStorePlace">
         </div>
         <div class="form-group">
-            <label >3D文件路径</label>
-            <input type="text" class="form-control" >
+            <label >3D文件</label>
+            <input type="file" class="form-control-file" id="relicsFilepath" name="relicsFilepath">
         </div>
         <div class="form-group">
             <label >化学组成数据</label>
-            <input type="file" class="form-control-file">
+            <input type="file" class="form-control-file" id="relicsChemical" name="relicsChemical">
         </div>
         <div class="form-group">
             <label >照片</label>
-            <input type="file" class="form-control-file">
+            <input type="file" class="form-control-file" id="relicsPicture" name="relicsPicture">
         </div>
         <div class="form-group">
             <label>简介</label>
-            <textarea class="form-control" rows="3"></textarea>
+            <textarea class="form-control" rows="3" id="relicsDesc" name="relicsDesc" ></textarea>
         </div>
-        <button class="btn btn-primary" id="form-submit">提交</button>
+        <input type="button" class="btn btn-primary" id="form-submit">提交</input>
     </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.js" ></script>
@@ -104,18 +104,22 @@
 <script type="application/javascript">
     $(document).ready(function (){
         $("#form-submit").click(function (){
+            let formData = new FormData($("#form-content")[0]);
+            console.log(formData);
             $.ajax({
-                url: "http://10.111.23.232:8099/fehead/",
+                url: "http://10.111.23.232:8099/fehead/relics/uploadAllData",
                 method: "post",
-                data: $("#form-content").serializeArray(),
+                data: formData,
+                processData: false,
+                contentType: false,
                 success: function (res){
                     console.log(res);
                 },
                 error: function (res){
-                  console.log(res);
+                    console.log(res);
                 }
-
             })
+
         })
     })
 </script>
