@@ -1,0 +1,14 @@
+#top-header {
+    width: 100%;
+    height: 330px;
+    background: url(./sr/images/bg.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+.mb-5 {
+    margin-top: 2rem;
+    text-align: center;
+    color: #000;
+}
+.container {
+    margin-bottom: 2rem;
+}
