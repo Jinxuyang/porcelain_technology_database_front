@@ -46,32 +46,41 @@
       <div class="container introduction">
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">
-              宜兴窑紫砂烧金漆云蝠砚&nbsp;<span class="text-muted"></span>
+            <h2  class="featurette-heading">
+              <span id="relicsName">宜兴窑紫砂烧金漆云蝠砚&nbsp;</span><span class="text-muted"></span>
             </h2>
             <div class="details"> 
                 <p class="lead">
-                   <span class="item">样品编号：</span>T040012
+                   <span class="item" >样品编号：</span>
+                    <span id="relicsId">T040012</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   <span class="item">样品原编号：</span>T040012
+                   <span class="item" >样品原编号：</span>
+                    <span id="relicsOrgId">T040012</span>
                 </p>
                 <p class="lead">
-                    <span class="item">采集地点：</span>陕西西安
+                    <span class="item" >采集地点：</span>
+                    <span id="relicsBirthPlace">陕西西安</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="item">烧造时代：</span>元朝
+                    <span class="item">烧造时代：</span>
+                    <span id="relicsBurnTime">元朝</span>
                 </p>
                 <p class="lead">
-                    <span class="item">文物分类：</span>釉下青白瓷
+                    <span class="item">文物分类：</span>
+                    <span id="relicsType">釉下青白瓷</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="item">出士时间：</span>唐朝末年
+                    <span class="item">出士时间：</span>
+                    <span id="relicsBirthTime">唐朝末年</span>
                 </p>
                 <p class="lead">
-                    <span class="item">窑口：</span>定窑
+                    <span class="item">窑口：</span>
+                    <span id="relicsKiln">定窑</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <span class="item">样品提供者：</span>张三
+                    <span class="item">样品提供者：</span>
+                    <span id="relicsProvider">张三</span>
                 </p>
                 <p class="lead">
-                    <span class="item">存放单位：</span>陕西西安
+                    <span class="item" >存放单位：</span>
+                    <span id="relicsStorePlace">陕西西安</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <span class="item">存放位置：</span>1号柜25号抽屉                
                 </p>    
@@ -87,7 +96,21 @@
           </div>
         </div>
       </div>
-      <
+
+        <!--Chemical Model-->
+        <div id="chemicalModel">
+            <table width="600" id="table">
+                <thead>
+                    <tr>
+                        <th>元素名</th>
+                        <th>含量</th>
+                    </tr>
+                </thead>
+                <tbody id="tbMain">
+
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <!-- Bootstrap core JavaScript
@@ -103,5 +126,53 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/holderjs@2.9.4/holder.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function (){
+            let reg = new RegExp('id=([^]*)');
+            let fieldObj = (window.location.search.substr(1).match(reg));
+            if (fieldObj != null){
+                let field = fieldObj[1];
+                getRelic(field);
+            }
+
+            function getRelic(field){
+                $.ajax({
+                    url:"http://localhost:8099/fehead/relics/getRelicsById",
+                    method:"get",
+                    data: {"id": field},
+                    headers:{
+                        "Content-type":"application/json"
+                    },
+                    success:function(res) {
+                        const data = res.data;
+                        const cmdata = data.chemicalModel;
+
+                        console.log(res);
+                        $("#relicsName").text(data.relicsModel.relicsName);
+                        $("#relicsId").text(data.relicsModel.relicsId);
+                        $("#relicsOrgId").text(data.relicsModel.relicsOrgId);
+                        $("#relicsBirthPlace").text(data.relicsModel.relicsBirthPlace);
+                        $("#relicsKiln").text(data.relicsModel.relicsKiln);
+                        $("#relicsProvider").text(data.relicsModel.relicsProvider);
+                        $("#relicsStorePlace").text(data.relicsModel.relicsStorePlace);
+
+
+                        let html = "";
+                        for (const element in cmdata){
+                            if (cmdata[element] == null) html += "<tr><td>" + element + "</td><td>" + 0 + "</td></tr>";
+                            else html += "<tr><td>" + element + "</td><td>" + cmdata[element] + "</td></tr>";
+                        }
+
+                        console.log(html);
+                        $("#tbMain").append(html);
+                    },
+                    fail:function(res){
+                        console.log(res);
+                    }
+                })
+            }
+        });
+
+    </script>
   </body>
 </html>
