@@ -109,10 +109,10 @@
                     $("#tbody").append(html);
                 }
                 $("#pagination").html("");
+
                 for (let i = 1;i <= page1;i++){
-                    if (page === i)
-                        $("#pagination").append("<li class=\"page-item active\"><button class=\"page-link\" onclick=\"getRelics("+field+","+i+")\">"+i+"</button></li>")
-                    else $("#pagination").append("<li class=\"page-item \"><button class=\"page-link\" onclick=\"getRelics("+field+","+i+")\">"+i+"</button></li>")
+                    if (page === i) $("#pagination").append("<li class=\"page-item active\"><button class=\"page-link\" onclick=\"getRelics('"+field+"',"+i+")\">"+i+"</button></li>")
+                    else $("#pagination").append("<li class=\"page-item \"><button class=\"page-link\" onclick=\"getRelics('"+field+"',"+i+")\">"+i+"</button></li>")
                 }
             },
             error: function(){
@@ -124,7 +124,6 @@
     $(document).ready(function (){
         let reg = new RegExp('field=([^]*)');
         let fieldObj = (window.location.search.substr(1).match(reg));
-        //console.log(fieldObj)
         if (fieldObj != null){
             let field = decodeURI(fieldObj[1]);
             getRelics(field,1);
@@ -132,6 +131,7 @@
 
         $("#search-btn").click(function (){
             getRelics($("#search-input").val(),1);
+
         })
     })
 </script>
