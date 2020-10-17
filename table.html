@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="./sr/images/title-logo.png">
+    <title>
+        古陶瓷科技数据库
+    </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<main role="main">
+</main>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="">
+    <a class="navbar-brand" href="#" style="margin-left: 1%">
+        古陶瓷科技数据库
+    </a>
+</nav>
+
+<div class="form-group" style="">
+</div>
+
+<div style="margin-right: 25%;margin-left: 25%">
+    <div class="form-group" style="display: inline;">
+    </div>
+    <div class="form-group" style="display: inline;">
+    </div>
+    <div class="row" >
+        <div class="col-sm-10">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="检索......" id="search-input">
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-primary" id="search-btn">检索</button>
+        </div>
+
+    </div>
+</div>
+<div class="row" style="">
+    <div class=" col-5  col-sm-12">
+        <table class="table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>文物名称</th>
+                <th>文物分类</th>
+                <th>出土地点</th>
+                <th>出土时间</th>
+                <th>烧造时代</th>
+                <th>窑口</th>
+                <th>样本提供者</th>
+                <th>存放单位</th>
+                <th>化学组成数据</th>
+            </tr>
+            </thead>
+
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/holderjs@2.9.4/holder.js"></script>
+<script type="application/javascript">
+    $(document).ready(function (){
+        let reg = new RegExp('field=([^]*)');
+        let fieldObj = (window.location.search.substr(1).match(reg));
+        if (fieldObj != null){
+            let field = fieldObj[1];
+            getRelics(field);
+        }
+
+        $("#search-btn").click(function (){
+            //console.log("ok");
+            getRelics($("#search-input").val(),1);
+        })
+
+
+        function getRelics(field,page = 1){
+            $.ajax({
+                url:"http://47.92.196.104:8099/fehead/relics/get/Relics",
+                method:"get",
+                data: {"field": field,"page":page},
+                headers:{
+                    "Content-type":"application/json"
+                },
+                success:function(res){
+                    const data = res.data;
+                    $("#tbody").html("");
+                    for (const dataElement of data) {
+                        let html = "<tr>\n" +
+                            "                <th scope=\"row\"><img src=\""+dataElement.relicsPicture+"\" height=\"100\" width=\"100\"></th>\n" +
+                            "                <td>"+dataElement.relicsName+"</td>\n" +
+                            "                <td>"+dataElement.relicsTypeName+"</td>\n" +
+                            "                <td>"+dataElement.relicsBirthPlace+"</td>\n" +
+                            "                <td>"+dataElement.relicsBirthTime+"</td>\n" +
+                            "                <td>"+dataElement.relicsBurnTime+"</td>\n" +
+                            "                <td>"+dataElement.relicsKiln+"</td>\n" +
+                            "                <td>"+dataElement.relicsProvider+"</td>\n" +
+                            "                <td>"+dataElement.relicsStorePlace+"</td>\n" +
+                            "                <td>"+
+                            "                    <a href=\""+dataElement.relicsChemical+"\">\n" +
+                            "                        <svg width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\" class=\"bi bi-download\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
+                            "                            <path fill-rule=\"evenodd\" d=\"M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z\"/>\n" +
+                            "                            <path fill-rule=\"evenodd\" d=\"M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z\"/>\n" +
+                            "                        </svg>\n" +
+                            "                    </a>\n" +
+                            "                </td>\n" +
+                            "            </tr>"
+                        $("#tbody").append(html);
+                    }
+                },
+                fail:function(){
+                    console.log(res);
+                }
+            })
+        }
+
+    })
+</script>
+</body>
+
+</html>
