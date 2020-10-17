@@ -169,7 +169,8 @@
                     processData: false,
                     contentType: false,
                     success: function (res){
-                        console.log(res);
+                        if (res.status === "success") alert("添加成功");
+                        else alert("添加失败");
                     },
                     error: function (res){
                         alert("添加失败")
