@@ -124,8 +124,9 @@
     $(document).ready(function (){
         let reg = new RegExp('field=([^]*)');
         let fieldObj = (window.location.search.substr(1).match(reg));
+        //console.log(fieldObj)
         if (fieldObj != null){
-            let field = fieldObj[1];
+            let field = decodeURI(fieldObj[1]);
             getRelics(field,1);
         }
 
