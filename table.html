@@ -89,7 +89,7 @@
                 for (const dataElement of data) {
                     let html = "<tr>\n" +
                         "                <th scope=\"row\"><img src=\""+dataElement.relicsPicture+"\" height=\"100\" width=\"100\"></th>\n" +
-                        "                <td>"+dataElement.relicsName+"</td>\n" +
+                        "                <td><a href=\"details.html?id="+dataElement.id+" \">"+dataElement.relicsName+"</a></td>\n" +
                         "                <td>"+dataElement.relicsTypeName+"</td>\n" +
                         "                <td>"+dataElement.relicsBirthPlace+"</td>\n" +
                         "                <td>"+dataElement.relicsBirthTime+"</td>\n" +
@@ -124,8 +124,9 @@
     $(document).ready(function (){
         let reg = new RegExp('field=([^]*)');
         let fieldObj = (window.location.search.substr(1).match(reg));
+        //console.log(fieldObj)
         if (fieldObj != null){
-            let field = fieldObj[1];
+            let field = decodeURI(fieldObj[1]);
             getRelics(field,1);
         }
 
