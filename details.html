@@ -86,14 +86,10 @@
                 </p>    
             </div>
           </div>
-          <div class="col-md-5 order-md-1">
+          <div class="col-md-5 order-md-1" id="img">
             <img
-              class="featurette-image img-fluid mx-auto"
-              data-src="holder.js/500x500/auto"
-              style="width: 400px; height: 400px"
-              src="./sr/images/item.jpg"
-            />
-          </div>
+                    class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" style="width: 400px; height: 400px" src="./sr/images/item.jpg"/>
+        </div>
         </div>
       </div>
 
@@ -137,7 +133,7 @@
 
             function getRelic(field){
                 $.ajax({
-                    url:"http://localhost:8099/fehead/relics/getRelicsById",
+                    url:"http://47.92.196.104:8099/fehead/relics/getRelicsById",
                     method:"get",
                     data: {"id": field},
                     headers:{
@@ -156,7 +152,7 @@
                         $("#relicsProvider").text(data.relicsModel.relicsProvider);
                         $("#relicsStorePlace").text(data.relicsModel.relicsStorePlace);
 
-
+                        $("#img").html("<img class=\"featurette-image img-fluid mx-auto\" data-src=\"holder.js/500x500/auto\" style=\"width: 400px; height: 400px\" src=\""+data.relicsModel.relicsPicture+"\"/>")
                         let html = "";
                         for (const element in cmdata){
                             if (cmdata[element] == null) html += "<tr><td>" + element + "</td><td>" + 0 + "</td></tr>";
