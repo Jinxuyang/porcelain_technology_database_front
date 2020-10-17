@@ -10,13 +10,14 @@
     </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" >
 
+
 </head>
 <body>
 
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="">
-    <a class="navbar-brand" href="#" style="margin-left: 1%">
+    <a class="navbar-brand" href="index.html" style="margin-left: 1%">
         古陶瓷科技数据库
     </a>
 </nav>
@@ -30,19 +31,19 @@
             <div class="col-sm-6">
                 <div class="form-group">
                     <label >样品原编号</label>
-                    <input type="text" class="form-control" id="relicsOrgId" name="relicsOrgId">
+                    <input type="text" class="form-control" id="relicsOrgId" name="relicsOrgId" onkeyup="this.value=this.value.trim()">
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group">
                     <label >样品编号</label>
-                    <input type="text" class="form-control" id="relicsId" name="relicsId">
+                    <input type="text" class="form-control" id="relicsId" name="relicsId" onkeyup="this.value=this.value.trim()">
                 </div>
             </div>
             <div class="col-sm-12">
                 <div class="form-group">
                     <label >文物名称</label>
-                    <input type="text" class="form-control" id="relicsName" name="relicsName">
+                    <input type="text" class="form-control" id="relicsName" name="relicsName" onkeyup="this.value=this.value.trim()">
                 </div>
             </div>
             <div class="col-md-12">
@@ -64,27 +65,27 @@
 
         <div class="form-group">
             <label for="relicsBirthPlace">出土地点</label>
-            <input type="text" class="form-control" id="relicsBirthPlace" name="relicsBirthPlace">
+            <input type="text" class="form-control" id="relicsBirthPlace" name="relicsBirthPlace" onkeyup="this.value=this.value.trim()">
         </div>
         <div class="form-group">
             <label for="relicsBirthTime">出土时间</label>
-            <input type="text" class="form-control" id="relicsBirthTime" name="relicsBirthTime">
+            <input type="text" class="form-control" id="relicsBirthTime" name="relicsBirthTime" onkeyup="this.value=this.value.trim()">
         </div>
         <div class="form-group">
             <label for="relicsBurnTime">烧造时代</label>
-            <input type="text" class="form-control" id="relicsBurnTime" name="relicsBurnTime">
+            <input type="text" class="form-control" id="relicsBurnTime" name="relicsBurnTime" onkeyup="this.value=this.value.trim()">
         </div>
         <div class="form-group">
             <label for="relicsKiln">窑口</label>
-            <input type="text" class="form-control" id="relicsKiln" name="relicsKiln">
+            <input type="text" class="form-control" id="relicsKiln" name="relicsKiln" onkeyup="this.value=this.value.trim()">
         </div>
         <div class="form-group">
             <label for="relicsProvider">样本提供者</label>
-            <input type="text" class="form-control" id="relicsProvider" name="relicsProvider">
+            <input type="text" class="form-control" id="relicsProvider" name="relicsProvider" onkeyup="this.value=this.value.trim()">
         </div>
         <div class="form-group">
             <label for="relicsStorePlace">存放单位</label>
-            <input type="text" class="form-control" id="relicsStorePlace" name="relicsStorePlace">
+            <input type="text" class="form-control" id="relicsStorePlace" name="relicsStorePlace" onkeyup="this.value=this.value.trim()">
         </div>
         <div class="form-group">
             <label for="relicsFilepath">3D文件</label>
@@ -108,7 +109,7 @@
         </div>
         <div class="form-group">
             <label for="relicsDesc">简介</label>
-            <textarea class="form-control" rows="3" id="relicsDesc" name="relicsDesc" ></textarea>
+            <textarea class="form-control" rows="3" id="relicsDesc" name="relicsDesc" onkeyup="this.value=this.value.trim()"></textarea>
         </div>
         <input type="button" class="btn btn-primary" id="form-submit" value="提交">
     </form>
@@ -117,25 +118,69 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/holderjs@2.9.4/holder.js"></script>
+<script src="sr/js/jquery.validate.js"></script>
 <script type="application/javascript">
+    function validForm(){
+        return $("#form-content").validate({
+            rules: {
+                relicsOrgId:"required",
+                relicsId:"required",
+                relicsName:"required",
+                relicsType:"required",
+                relicsBirthPlace:"required",
+                relicsBirthTime:"required",
+                relicsBurnTime:"required",
+                relicsProvider:"required",
+                relicsStorePlace:"required",
+                relicsFilepath:"required",
+                relicsChemical:"required",
+                relicsKiln:"required",
+                relicsPicture:"required",
+                relicsDesc:"required",
+
+            },
+            messages: {
+                relicsOrgId:"请填写样品原编号",
+                relicsId:"请填写样品编号",
+                relicsName:"请填写文物名称",
+                relicsType:"请选择文物分类",
+                relicsBirthPlace:"请填写出土地点",
+                relicsBirthTime:"请填写出土时间",
+                relicsBurnTime:"请填写烧造时间",
+                relicsProvider:"请填写样品提供者",
+                relicsStorePlace:"请填写存放单位",
+                relicsFilepath:"请选择存放单位",
+                relicsChemical:"请选择化学组成数据",
+                relicsKiln:"请填写窖口",
+                relicsPicture:"请选择照片",
+                relicsDesc:"请填写简介",
+            }
+        })
+    }
+    $(validForm())
     $(document).ready(function (){
         $("#form-submit").click(function (){
             let formData = new FormData($("#form-content")[0]);
-            console.log(formData);
-            $.ajax({
-                url: "http://47.92.196.104:8099/fehead/relics/uploadAllData",
-                method: "post",
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function (res){
-                    console.log(res);
-                },
-                error: function (res){
-                    console.log(res);
-                }
-            })
-
+            if (validForm().form()){
+                $.ajax({
+                    url: "http://47.92.196.104:8099/fehead/relics/uploadAllData",
+                    method: "post",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (res){
+                        if (res.status === "success") {
+                            alert("添加成功")
+                            location.reload()
+                        } else {
+                            alert("添加失败");
+                        }
+                    },
+                    error: function (res){
+                        alert("添加失败")
+                    }
+                })
+            }
         })
     })
 </script>
