@@ -1,6 +1,7 @@
 .container.introduction {
     position: relative;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .details {
@@ -11,4 +12,9 @@
 .lead>.item {
     font-size: 14px;
     color: rgb(83, 83, 83);
+}
+
+#chemicalModel {
+    display: flex;
+    justify-content: center;
 }
