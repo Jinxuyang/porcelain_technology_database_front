@@ -18,7 +18,8 @@
 
 .details {
     position: absolute;
-    bottom: 20px;
+    bottom: 1px;
+    font-size: 20px;
 }
 
 .lead>.item {
@@ -26,7 +27,8 @@
     color: rgb(83, 83, 83);
 }
 
-#chemicalModel {
+#chemicalModel,#chemicalModel~div
+{
     display: flex;
     justify-content: center;
 }
