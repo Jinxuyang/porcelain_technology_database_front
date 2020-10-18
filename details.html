@@ -89,13 +89,13 @@
           <div class="col-md-5 order-md-1" id="img">
             <img
                     class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" style="width: 400px; height: 400px" src="./sr/images/item.jpg"/>
-        </div>
+          </div>
         </div>
       </div>
 
         <!--Chemical Model-->
         <div id="chemicalModel">
-            <table width="600" id="table">
+            <table width="600" id="table" border="1" >
                 <thead>
                     <tr>
                         <th>元素名</th>
@@ -107,7 +107,9 @@
                 </tbody>
             </table>
         </div>
+
     </main>
+    <div id="loading"></div>
 
     <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -122,6 +124,15 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/holderjs@2.9.4/holder.js"></script>
+    <script language="javascript" type="text/javascript">
+        function showCSS() {
+            document.getElementById("loading").style.display ="block";
+            setTimeout(function(){
+                document.getElementById("loading").style.display ='none';
+            },1000);
+        }
+        window.onload = showCSS();
+    </script>
     <script type="text/javascript">
         $(document).ready(function (){
             let reg = new RegExp('id=([^]*)');
