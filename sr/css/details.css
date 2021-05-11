@@ -1,0 +1,40 @@
+#loading {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: black url("../images/loading.gif") center center no-repeat;
+    z-index: 99999;
+    filter: alpha(opacity=10);
+}
+
+.container.introduction {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.details {
+    position: absolute;
+    bottom: 1px;
+    font-size: 20px;
+}
+
+.lead>.item {
+    font-size: 14px;
+    color: rgb(83, 83, 83);
+}
+
+#chemicalModel,#chemicalModel~div
+{
+    display: flex;
+    justify-content: center;
+}
+
+#chemicalModel td,
+#chemicalModel th{
+    text-align: center;
+    vertical-align: center;
+}
