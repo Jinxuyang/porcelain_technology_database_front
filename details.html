@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>古陶瓷科技数据库</title>
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+    />
+
+    <!-- Custom fonts for this template -->
+    <link
+            href="https://lib.baomitu.com/simple-line-icons/2.4.1/css/simple-line-icons.css"
+            rel="stylesheet"
+            type="text/css"
+    />
+
+    <!-- Custom styles for this template -->
+    <link
+            href="https://cdn.bootcdn.net/ajax/libs/startbootstrap-landing-page/1.0.0/css/landing-page.min.css"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./sr/css/details.css">
+</head>
+<body>
+<main role="main">
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light static-top" id="top-navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">古陶瓷科技数据库</a>
+        </div>
+    </nav>
+
+    <div class="container introduction">
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h1 class="featurette-heading">
+                    <span id="relicsName">宜兴窑紫砂烧金漆云蝠砚&nbsp;</span><span class="text-muted"></span>
+                </h1>
+                <a href="3D.html">查看3D模型图</a>
+                <div class="details" >
+                    <table border="1" >
+                        <tr>
+                            <td><span class="item">样品编号：</span>
+                                <span id="relicsId">T040012</span></td>
+                            <td><span class="item">样品原编号：</span>
+                                <span id="relicsOrgId">T040012</span></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 20px">
+                                <span class="item">采集地点：</span>
+                                <span id="relicsBirthPlace">陕西西安</span>
+                            </td>
+                            <td>
+                                <span class="item">烧造时代：</span>
+                                <span id="relicsBurnTime">元朝</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="item">文物分类：</span>
+                                <span id="relicsType">釉下青白瓷</span>
+                            </td>
+                            <td>
+                                <span class="item">出士时间：</span>
+                                <span id="relicsBirthTime">唐朝末年</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="item">窑口：</span>
+                                <span id="relicsKiln">定窑</span>
+                            </td>
+                            <td>
+                                <span class="item">样品提供者：</span>
+                                <span id="relicsProvider">张三</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="item">存放单位：</span>
+                                <span id="relicsStorePlace">陕西西安</span>
+                            </td>
+                            <td>
+                                <span class="item">存放位置：</span>1号柜25号抽屉
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-5 order-md-1" id="img">
+                    <img
+                            class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto"
+                            style="width: 400px; height: 400px" src="./sr/images/item.jpg" >
+            </div>
+        </div>
+    </div>
+
+    <!--Chemical Model-->
+    <h3 style="text-align: center">化学元素组成</h3>
+    <div id="chemicalModel">
+        <table width="600" id="chemical-table" border="1">
+            <thead>
+            <tr>
+                <th>元素名</th>
+                <th>含量</th>
+            </tr>
+            </thead>
+            <tbody id="tbMain">
+
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <h3 style="text-align: center">光谱实验数据</h3>
+    <div>
+        <table width="600" border="1">
+            <thead>
+            <tr>
+                <th>lamda</th>
+                <th>10</th>
+                <th>15</th>
+                <th>20</th>
+                <th>25</th>
+                <th>30</th>
+                <th>35</th>
+                <th>40</th>
+                <th>45</th>
+                <th>50</th>
+                <th>55</th>
+                <th>60</th>
+                <th>65</th>
+                <th>70</th>
+                <th>75</th>
+                <th>80</th>
+                <th>85</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr height="19" style="height:14.25pt">
+                <td height="19" class="xl67" style="height:14.25pt">300.13</td>
+                <td class="xl68">27.506</td>
+                <td class="xl68">16.504</td>
+                <td class="xl68">9.468</td>
+                <td class="xl68">6.496</td>
+                <td class="xl68">4.602</td>
+                <td class="xl68">3.907</td>
+                <td class="xl68">2.948</td>
+                <td class="xl68">2.661</td>
+                <td class="xl68">2.409</td>
+                <td class="xl68">1.666</td>
+                <td class="xl68">1.45</td>
+                <td class="xl68">0.743</td>
+                <td class="xl68">0.803</td>
+                <td class="xl68">1.222</td>
+                <td class="xl68">0.503</td>
+                <td class="xl68">299.675</td>
+            </tr>
+            <tr height="19" style="height:14.25pt">
+                <td height="19" class="xl67" style="height:14.25pt">350.08</td>
+                <td class="xl68">34.381</td>
+                <td class="xl68">23.251</td>
+                <td class="xl68">17.481</td>
+                <td class="xl68">14.475</td>
+                <td class="xl68">12.326</td>
+                <td class="xl68">11.229</td>
+                <td class="xl68">9.57</td>
+                <td class="xl68">8.517</td>
+                <td class="xl68">7.117</td>
+                <td class="xl68">5.655</td>
+                <td class="xl68">5.485</td>
+                <td class="xl68">3.995</td>
+                <td class="xl68">2.979</td>
+                <td class="xl68">1.9</td>
+                <td class="xl68">1.008</td>
+                <td class="xl68">0.223</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">400.67</td>
+                <td class="xl68">42.367</td>
+                <td class="xl68">32.702</td>
+                <td class="xl68">25.239</td>
+                <td class="xl68">22.409</td>
+                <td class="xl68">19.898</td>
+                <td class="xl68">18.363</td>
+                <td class="xl68">16.361</td>
+                <td class="xl68">14.525</td>
+                <td class="xl68">12.8</td>
+                <td class="xl68">11.015</td>
+                <td class="xl68">9.202</td>
+                <td class="xl68">7.297</td>
+                <td class="xl68">5.318</td>
+                <td class="xl68">3.644</td>
+                <td class="xl68">1.951</td>
+                <td class="xl68">0.619</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">450.05</td>
+                <td class="xl68">51.895</td>
+                <td class="xl68">40.5</td>
+                <td class="xl68">34.47</td>
+                <td class="xl68">29.937</td>
+                <td class="xl68">27.184</td>
+                <td class="xl68">24.796</td>
+                <td class="xl68">22.574</td>
+                <td class="xl68">20.572</td>
+                <td class="xl68">18.279</td>
+                <td class="xl68">15.359</td>
+                <td class="xl68">13.192</td>
+                <td class="xl68">10.462</td>
+                <td class="xl68">7.793</td>
+                <td class="xl68">5.162</td>
+                <td class="xl68">2.775</td>
+                <td class="xl68">0.828</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">500.04</td>
+                <td class="xl68">59.139</td>
+                <td class="xl68">47.704</td>
+                <td class="xl68">40.576</td>
+                <td class="xl68">36.185</td>
+                <td class="xl68">33.499</td>
+                <td class="xl68">31.018</td>
+                <td class="xl68">27.794</td>
+                <td class="xl68">24.992</td>
+                <td class="xl68">21.996</td>
+                <td class="xl68">19.061</td>
+                <td class="xl68">15.866</td>
+                <td class="xl68">12.669</td>
+                <td class="xl68">9.308</td>
+                <td class="xl68">6.255</td>
+                <td class="xl68">3.377</td>
+                <td class="xl68">1.169</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">550.18</td>
+                <td class="xl68">67.84</td>
+                <td class="xl68">56.46</td>
+                <td class="xl68">48.982</td>
+                <td class="xl68">44.681</td>
+                <td class="xl68">40.743</td>
+                <td class="xl68">38.382</td>
+                <td class="xl68">34.605</td>
+                <td class="xl68">31.451</td>
+                <td class="xl68">27.638</td>
+                <td class="xl68">23.779</td>
+                <td class="xl68">19.698</td>
+                <td class="xl68">15.808</td>
+                <td class="xl68">11.666</td>
+                <td class="xl68">7.715</td>
+                <td class="xl68">4.257</td>
+                <td class="xl68">1.26</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">600.44</td>
+                <td class="xl68">74.898</td>
+                <td class="xl68">65.442</td>
+                <td class="xl68">57.372</td>
+                <td class="xl68">52.789</td>
+                <td class="xl68">48.859</td>
+                <td class="xl68">45.217</td>
+                <td class="xl68">41.046</td>
+                <td class="xl68">36.739</td>
+                <td class="xl68">32.576</td>
+                <td class="xl68">28.297</td>
+                <td class="xl68">23.53</td>
+                <td class="xl68">18.922</td>
+                <td class="xl68">13.964</td>
+                <td class="xl68">9.315</td>
+                <td class="xl68">5.099</td>
+                <td class="xl68">1.539</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">650.36</td>
+                <td class="xl68">78.102</td>
+                <td class="xl68">67.569</td>
+                <td class="xl68">60.309</td>
+                <td class="xl68">54.979</td>
+                <td class="xl68">50.796</td>
+                <td class="xl68">47.267</td>
+                <td class="xl68">43.012</td>
+                <td class="xl68">38.949</td>
+                <td class="xl68">34.267</td>
+                <td class="xl68">29.607</td>
+                <td class="xl68">24.621</td>
+                <td class="xl68">19.839</td>
+                <td class="xl68">14.474</td>
+                <td class="xl68">9.849</td>
+                <td class="xl68">5.263</td>
+                <td class="xl68">1.589</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">700.37</td>
+                <td class="xl68">80.436</td>
+                <td class="xl68">71.183</td>
+                <td class="xl68">62.447</td>
+                <td class="xl68">57.163</td>
+                <td class="xl68">53.548</td>
+                <td class="xl68">49.425</td>
+                <td class="xl68">45.33</td>
+                <td class="xl68">41.011</td>
+                <td class="xl68">36.379</td>
+                <td class="xl68">31.24</td>
+                <td class="xl68">26.209</td>
+                <td class="xl68">20.539</td>
+                <td class="xl68">15.39</td>
+                <td class="xl68">10.128</td>
+                <td class="xl68">5.404</td>
+                <td class="xl68">1.663</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">750.02</td>
+                <td class="xl68">81.893</td>
+                <td class="xl68">70.767</td>
+                <td class="xl68">62.538</td>
+                <td class="xl68">57.479</td>
+                <td class="xl68">54.196</td>
+                <td class="xl68">50.364</td>
+                <td class="xl68">46.203</td>
+                <td class="xl68">41.694</td>
+                <td class="xl68">36.621</td>
+                <td class="xl68">31.48</td>
+                <td class="xl68">26.018</td>
+                <td class="xl68">21.198</td>
+                <td class="xl68">15.512</td>
+                <td class="xl68">10.925</td>
+                <td class="xl68">5.818</td>
+                <td class="xl68">1.712</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">800.17</td>
+                <td class="xl68">83.655</td>
+                <td class="xl68">72.649</td>
+                <td class="xl68">64.856</td>
+                <td class="xl68">58.85</td>
+                <td class="xl68">54.647</td>
+                <td class="xl68">51.25</td>
+                <td class="xl68">46.534</td>
+                <td class="xl68">42.362</td>
+                <td class="xl68">36.828</td>
+                <td class="xl68">31.949</td>
+                <td class="xl68">26.765</td>
+                <td class="xl68">21.97</td>
+                <td class="xl68">15.864</td>
+                <td class="xl68">10.482</td>
+                <td class="xl68">5.744</td>
+                <td class="xl68">1.724</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">850.35</td>
+                <td class="xl68">80.967</td>
+                <td class="xl68">70.96</td>
+                <td class="xl68">63.316</td>
+                <td class="xl68">57.223</td>
+                <td class="xl68">54.103</td>
+                <td class="xl68">50.388</td>
+                <td class="xl68">46.12</td>
+                <td class="xl68">41.786</td>
+                <td class="xl68">37.062</td>
+                <td class="xl68">31.705</td>
+                <td class="xl68">26.893</td>
+                <td class="xl68">21.331</td>
+                <td class="xl68">15.768</td>
+                <td class="xl68">10.338</td>
+                <td class="xl68">5.769</td>
+                <td class="xl68">1.935</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">900.12</td>
+                <td class="xl68">83.058</td>
+                <td class="xl68">72.015</td>
+                <td class="xl68">63.375</td>
+                <td class="xl68">58.28</td>
+                <td class="xl68">54.944</td>
+                <td class="xl68">50.98</td>
+                <td class="xl68">46.489</td>
+                <td class="xl68">42.028</td>
+                <td class="xl68">37.255</td>
+                <td class="xl68">31.834</td>
+                <td class="xl68">26.599</td>
+                <td class="xl68">21.214</td>
+                <td class="xl68">15.706</td>
+                <td class="xl68">10.513</td>
+                <td class="xl68">5.843</td>
+                <td class="xl68">1.512</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">950.32</td>
+                <td class="xl68">79.648</td>
+                <td class="xl68">69.157</td>
+                <td class="xl68">62.559</td>
+                <td class="xl68">57.209</td>
+                <td class="xl68">53.882</td>
+                <td class="xl68">49.926</td>
+                <td class="xl68">45.652</td>
+                <td class="xl68">40.375</td>
+                <td class="xl68">36.684</td>
+                <td class="xl68">31.58</td>
+                <td class="xl68">26.212</td>
+                <td class="xl68">21.254</td>
+                <td class="xl68">15.932</td>
+                <td class="xl68">10.108</td>
+                <td class="xl68">5.669</td>
+                <td class="xl68">1.468</td>
+            </tr>
+            <tr height="18" style="height:13.5pt">
+                <td height="18" class="xl67" style="height:13.5pt">1000.07</td>
+                <td class="xl68">83.71</td>
+                <td class="xl68">74.245</td>
+                <td class="xl68">65.272</td>
+                <td class="xl68">61.246</td>
+                <td class="xl68">55.952</td>
+                <td class="xl68">52.521</td>
+                <td class="xl68">47.351</td>
+                <td class="xl68">44.479</td>
+                <td class="xl68">38.793</td>
+                <td class="xl68">33.645</td>
+                <td class="xl68">28.7</td>
+                <td class="xl68">23.249</td>
+                <td class="xl68">17.485</td>
+                <td class="xl68">12.124</td>
+                <td class="xl68">7.177</td>
+                <td class="xl68">2.613</td>
+            </tr>
+            <!--[if supportMisalignedColumns]-->
+            <tr height="0" style="display:none">
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+                <td width="72" style="width:54pt"></td>
+            </tr>
+            <!--[endif]-->
+            </tbody>
+        </table>
+    </div>
+    <hr>
+</main>
+<div id="loading"></div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+></script>
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/holderjs@2.9.4/holder.js"></script>
+<script language="javascript" type="text/javascript">
+    function showCSS() {
+        document.getElementById("loading").style.display = "block";
+        setTimeout(function () {
+            document.getElementById("loading").style.display = 'none';
+        }, 1000);
+    }
+
+    window.onload = showCSS();
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        let reg = new RegExp('id=([^]*)');
+        let fieldObj = (window.location.search.substr(1).match(reg));
+        if (fieldObj != null) {
+            let field = fieldObj[1];
+            getRelic(field);
+        }
+
+        function getRelic(field) {
+            $.ajax({
+                url: "http://47.92.196.104:8099/fehead/relics/getRelicsById",
+                method: "get",
+                data: {"id": field},
+                headers: {
+                    "Content-type": "application/json"
+                },
+                success: function (res) {
+                    const data = res.data;
+                    const cmdata = data.chemicalModel;
+
+                    console.log(res);
+                    $("#relicsName").text(data.relicsModel.relicsName);
+                    $("#relicsId").text(data.relicsModel.relicsId);
+                    $("#relicsOrgId").text(data.relicsModel.relicsOrgId);
+                    $("#relicsBirthPlace").text(data.relicsModel.relicsBirthPlace);
+                    $("#relicsKiln").text(data.relicsModel.relicsKiln);
+                    $("#relicsProvider").text(data.relicsModel.relicsProvider);
+                    $("#relicsStorePlace").text(data.relicsModel.relicsStorePlace);
+
+                    $("#img").html("<img class=\"featurette-image img-fluid mx-auto\" data-src=\"holder.js/500x500/auto\" style=\"width: 400px; height: 400px\" src=\"" + data.relicsModel.relicsPicture + "\"/>")
+                    let html = "";
+                    for (const element in cmdata) {
+                        if (cmdata[element] == null || cmdata[element] == "") html += "<tr><td>" + element + "</td><td>" + 0 + "</td></tr>";
+                        else html += "<tr><td>" + element + "</td><td>" + cmdata[element] + "</td></tr>";
+                    }
+
+                    console.log(html);
+                    $("#tbMain").append(html);
+                },
+                fail: function (res) {
+                    console.log(res);
+                }
+            })
+        }
+    });
+
+</script>
+</body>
+</html>
